@@ -11,8 +11,24 @@
   <li>Go to "Check packages" page and click on "Generate new package" button as many as you want.</li>
   <li>You can see your packages. You can filter your packages and see content of a certain package by clicking on its package number.</li>
 </ol>
+<p>Please note that this demo was written on a Mac using Jetbrains Rider IDE,
+  therefore it uses Sqlite by default. If you want to make the demo work with Sql Server,
+  please follow the steps below (not tested before):
+</p>
+<ul>
+  <li>
+    Install SQL Server nuget package: "PM > Install-Package Microsoft.EntityFrameworkCore.SqlServer"
+  </li>
+  <li>
+    Update ConnectionStrings in appsettings.json (line 3)
+  </li>
+  <li>
+    Update Startup.cs AddDbContext directive (line 28) and change UseSqlite to UseSqlServer
+  </li>
+</ul>
 <p>Known issues:</p>
 <ul>
   <li>Website parser package cannot select some photos from HTML</li>
 </ul>
 <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>
+<p>Have fun and drop me some message if you liked it!</p>
