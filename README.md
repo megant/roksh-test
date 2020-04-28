@@ -4,7 +4,7 @@ Welcome to my demo work
 
 To make demo work, please follow these steps below:
 
-1.  Try to log in (you cannot).
+1.  Go to login page. If you see an error page, follow step 2, if you can see login form, skip step 2.
 2.  On login page click on "apply migration" button. This step will create database structure automatically.
 3.  Go to "Register" and create a new user.
 4.  Click on confirmation link to activate newly created user.
