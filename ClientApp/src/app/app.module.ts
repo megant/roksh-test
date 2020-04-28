@@ -10,7 +10,7 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { ItemsComponent } from './items/items.component';
-import { PackagesComponent } from './packages/packages.component';
+import { PackageListComponent } from './package-list/package-list.component';
 import { PackageItemsComponent } from './package-items/package-items.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { PackageItemsComponent } from './package-items/package-items.component';
     NavMenuComponent,
     HomeComponent,
     ItemsComponent,
-    PackagesComponent,
+    PackageListComponent,
     PackageItemsComponent
   ],
   imports: [
@@ -31,7 +31,7 @@ import { PackageItemsComponent } from './package-items/package-items.component';
       {path: '', component: HomeComponent, pathMatch: 'full'},
       {path: 'items', component: ItemsComponent, canActivate: [AuthorizeGuard]},
       {path: 'package-items/:packageCode', component: PackageItemsComponent, canActivate: [AuthorizeGuard]},
-      {path: 'packages', component: PackagesComponent, canActivate: [AuthorizeGuard]},
+      {path: 'package-list', component: PackageListComponent, canActivate: [AuthorizeGuard]},
     ]),
     ReactiveFormsModule
   ],
