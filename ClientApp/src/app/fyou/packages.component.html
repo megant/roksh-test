@@ -1,0 +1,38 @@
+<h1>Check packages</h1>
+
+<p>Click on "generate new packages" button for generating a new package.</p>
+
+<p *ngIf="!packages"><em>Loading...</em></p>
+
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  {{error}}
+</div>
+
+<form>
+  <div class="form-group form-inline">
+    Filter my packages: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+  </div>
+</form>
+
+<table class="packages-table table table-striped" aria-labelledby="tableLabel" *ngIf="packages">
+  <thead>
+  <tr>
+    <th>Package code</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>State</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let package of filteredPackages">
+    <td>
+      <a class="nav-item nav-link-edit" [routerLink]="['/package-items', package.code]">{{ package.code }}</a>
+    </td>
+    <td>{{ package.name }}</td>
+    <td>{{ package.description }}</td>
+    <td>{{ package.state }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-primary" (click)="generatePackage()">Generate new package</button>
