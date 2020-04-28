@@ -1,0 +1,20 @@
+<h2>Content of {{packageCode}} package</h2>
+<p *ngIf="!packageItems"><em>Loading...</em></p>
+<table class="packages-table table table-striped" aria-labelledby="tableLabel" *ngIf="packageItems">
+  <thead>
+  <tr>
+    <th>Item code</th>
+    <th>Name</th>
+    <th>Photo</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of packageItems">
+    <td>{{ item.code }}</td>
+    <td>{{ item.name }}</td>
+    <td><img *ngIf="item.imageUrl" [src]="item.imageUrl" /></td>
+    <td>{{ item.description }}</td>
+  </tr>
+  </tbody>
+</table>
